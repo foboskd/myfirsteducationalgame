@@ -1,14 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-
 int main(){
     
     char area [10][21];
     char controllers;
     int x = 10, y = 5, ox, oy, appley = 3, applex = 5;
-    int i = 0;
+    int i = 0, countapple = 0;
     
     do{
     
@@ -41,6 +39,8 @@ int main(){
             printf("\n");
         }
         
+        printf("%i", countapple);
+        
         scanf("%c", &controllers);
         
         ox = x;
@@ -61,7 +61,9 @@ int main(){
         
         if (area[y][x] == area[appley][applex]){
             appley = rand() % 10;
-            applex = rand() % 20;            
+            applex = rand() % 20;
+            
+            countapple++;
         }
         
         if (area[y][x] == '#'){
